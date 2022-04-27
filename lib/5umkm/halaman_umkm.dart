@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import '../skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,7 +68,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
 
       //Life style
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/business/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -127,7 +126,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
 
       // //Digital
       // final response2 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/business/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -177,7 +176,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
 
       // //Culture & art
       // final response3 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/business/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -227,7 +226,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
 
       // //Food & Beverage
       // final response4 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/business/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -461,7 +460,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.image_path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -664,7 +663,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.image_path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -867,7 +866,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.image_path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -1070,7 +1069,7 @@ class _HalamanUmkmState extends State<HalamanUmkm> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.image_path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>

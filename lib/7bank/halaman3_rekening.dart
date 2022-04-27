@@ -4,7 +4,6 @@ import 'dart:isolate';
 import 'dart:ui';
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -87,7 +86,7 @@ class _BankRekeningState extends State<BankRekening> {
       });
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/financial-registers/' + role_uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -433,7 +432,7 @@ class _BankRekeningState extends State<BankRekening> {
                                                       LineIcons.fileDownload),
                                                   onPressed: () async {
                                                     download(
-                                                        URL_FULL +
+                                                        'http://digiadministrator.falaraborneo.com/' +
                                                             x.pdf);
                                                   },
                                                 ), // icon-2

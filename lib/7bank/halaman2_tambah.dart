@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/bank_model.dart';
 import 'package:digipark/0lainlain/textinputdecor.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -103,7 +102,7 @@ class _BankGambarTambahState extends State<BankGambarTambah> {
           http.ByteStream(DelegatingStream.typed(_imageFile_avatar.openRead()));
       var length = await _imageFile_avatar.length();
       var uri = Uri.parse(
-          URL_HTTP+'/api/v2/user/financial-slide/' +
+          'http://digiadministrator.falaraborneo.com/api/v2/user/financial-slide/' +
               role_uuid +
               '/slide');
       var request = http.MultipartRequest("POST", uri);

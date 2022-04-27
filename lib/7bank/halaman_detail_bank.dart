@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart'; 
 import 'package:digipark/7bank/buat_rekening.dart';
 import 'package:digipark/7bank/pinjaman_dana.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:digipark/widgets/handlinginet.dart';
 import 'package:flutter/material.dart'; 
@@ -87,7 +86,7 @@ class _DetailBankState extends State<DetailBank> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/detail-financial/' + widget.list_financial.uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -184,7 +183,7 @@ class _DetailBankState extends State<DetailBank> {
                                   children: <Widget>[
                                     CachedNetworkImage(
                                       imageUrl:
-                                          URL_FULL +
+                                          "http://digiadministrator.falaraborneo.com/" +
                                               image_path[index],
                                       fit: BoxFit.cover,
                                       placeholder: (context, url) =>

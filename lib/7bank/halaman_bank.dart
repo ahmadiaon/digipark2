@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';  
 import 'package:cached_network_image/cached_network_image.dart'; 
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; 
@@ -55,7 +54,7 @@ class _HalamanBankState extends State<HalamanBank> {
       });
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/financial-service/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -223,7 +222,7 @@ class _HalamanBankState extends State<HalamanBank> {
                                                   const EdgeInsets.all(15.0),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                    URL_FULL +
+                                                    "http://digiadministrator.falaraborneo.com/" +
                                                         x.path,
                                                 //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                 // CircularProgressIndicator(value: downloadProgress.progress),

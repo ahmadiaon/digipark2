@@ -105,7 +105,7 @@ class _HalamanOtpState extends State<HalamanOtp> {
       print(widget.otps);
       // final response = await http.post(
       //     Uri.http(
-      //         URL, 'api/v2/user/checkEmail'),
+      //         'digiadministrator.falaraborneo.com', 'api/v2/user/checkEmail'),
       //     body: {"data": phone_number});
       // final data = jsonDecode(response.body);
 

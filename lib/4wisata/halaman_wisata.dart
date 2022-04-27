@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'dart:io';  
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart'; 
+import 'package:digipark/0lainlain/modal.dart'; 
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; 
@@ -56,7 +55,7 @@ class _HalamanWisataState extends State<HalamanWisata> {
 
       final response2 = await http.get(
           Uri.http(
-              URL, 'api/v2/user/tour/list'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/tour/list'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -225,7 +224,7 @@ class _HalamanWisataState extends State<HalamanWisata> {
                                                 color: Colors.grey[200],
                                                 child: CachedNetworkImage(
                                                   imageUrl:
-                                                      URL_FULL +
+                                                      "http://digiadministrator.falaraborneo.com/" +
                                                           x.image_path, fit: BoxFit.cover,
                                                   //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                   // CircularProgressIndicator(value: downloadProgress.progress),

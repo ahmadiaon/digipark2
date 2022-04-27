@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:digipark/env.dart';
 import 'package:http/http.dart' as http;  
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +54,7 @@ class _HalamanVideoState extends State<HalamanVideo> {
 
       final response2 = await http.get(
           Uri.http(
-              URL, 'api/v2/user/youtube/list'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/youtube/list'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

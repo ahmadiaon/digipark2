@@ -1,13 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart'; 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class CustomDialog extends StatefulWidget {
+class CustomDialog extends StatelessWidget {
   final String title, description, buttonText, qrcode, image;
-  
+
   CustomDialog({
     @required this.title,
     @required this.description,
@@ -16,15 +14,6 @@ class CustomDialog extends StatefulWidget {
     @required this.qrcode,
   });
 
-  @override
-  State<CustomDialog> createState() => _CustomDialogState();
-}
-
-class _CustomDialogState extends State<CustomDialog> {
-  var UrL = "";
-
-  @override
-  
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -38,7 +27,6 @@ class _CustomDialogState extends State<CustomDialog> {
   }
 
   dialogContent(BuildContext context) {
-    
     return Stack(
       children: <Widget>[
         Container(
@@ -67,7 +55,7 @@ class _CustomDialogState extends State<CustomDialog> {
                 mainAxisSize: MainAxisSize.min, // To make the card compact
                 children: <Widget>[
                   Text(
-                    widget.title,
+                    title,
                     style: GoogleFonts.inter(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w700,
@@ -76,14 +64,14 @@ class _CustomDialogState extends State<CustomDialog> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 0.0),
                     child: Text(
-                      widget.description,
+                      description,
                     ),
                   ),
                   SizedBox(height: 10.0),
                   Container(
                       child: CachedNetworkImage(
                         imageUrl:
-                            URL_FULL + widget.qrcode,
+                            "http://digiadministrator.falaraborneo.com/" + qrcode,
                         // fit: BoxFit.cover,
                         //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                         // CircularProgressIndicator(value: downloadProgress.progress),
@@ -100,7 +88,7 @@ class _CustomDialogState extends State<CustomDialog> {
                       onPressed: () {
                         Navigator.of(context).pop(); // To close the dialog
                       },
-                      child: Text(widget.buttonText),
+                      child: Text(buttonText),
                     ),
                   ),
                 ],
@@ -118,7 +106,7 @@ class _CustomDialogState extends State<CustomDialog> {
               child: CachedNetworkImage(
                 height: 120,
                 width: 120,
-                imageUrl: URL_FULL + widget.image,
+                imageUrl: "http://digiadministrator.falaraborneo.com/" + image,
                 fit: BoxFit.cover,
                 //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                 // CircularProgressIndicator(value: downloadProgress.progress),

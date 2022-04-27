@@ -4,7 +4,6 @@ import 'package:digipark/1logindll/halaman_login.dart';
 import 'package:digipark/1logindll/halaman_otp.dart';
 import 'package:digipark/2menu/menu_utama.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,7 +69,7 @@ class _HalamanResetPasswordState extends State<HalamanResetPassword> {
         loading = true;
       });
       final response = await http.post(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/update-password/' + widget.phone_number_id),
           body: {"password": phone_number});
       final data = jsonDecode(response.body);

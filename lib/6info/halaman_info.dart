@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:digipark/env.dart';
 import 'package:http/http.dart' as http;  
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +53,7 @@ class _HalamanInfoState extends State<HalamanInfo> {
       });
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/news/list/single'),
           headers: {
             'Content-Type': 'application/json',
@@ -230,7 +229,7 @@ class _HalamanInfoState extends State<HalamanInfo> {
                                                 color: Colors.grey[200],
                                                 child: CachedNetworkImage(
                                                   imageUrl:
-                                                      URL_FULL +
+                                                      "http://digiadministrator.falaraborneo.com/" +
                                                           x.image_path, fit: BoxFit.cover,
                                                   //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                   // CircularProgressIndicator(value: downloadProgress.progress),

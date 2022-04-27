@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/textinputdecor.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -131,7 +130,7 @@ class _MendaftarKomunitasState extends State<MendaftarKomunitas> {
       print(token);
 
       var uri = Uri.parse(
-          URL_HTTP+'/api/v2/user/community/register/' +
+          'http://digiadministrator.falaraborneo.com/api/v2/user/community/register/' +
               uuid);
       var request = http.MultipartRequest("POST", uri);
       request.fields['community_uuid'] = widget.com_uuid;
@@ -269,7 +268,7 @@ class _MendaftarKomunitasState extends State<MendaftarKomunitas> {
                           Center(
                             child: CachedNetworkImage(
                               imageUrl:
-                                  URL_FULL +
+                                  "http://digiadministrator.falaraborneo.com/" +
                                       widget.path,
                               fit: BoxFit.cover,
                               height: size.height * 0.18,

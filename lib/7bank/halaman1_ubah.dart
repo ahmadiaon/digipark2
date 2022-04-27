@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:digipark/0lainlain/textinputdecor.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -87,7 +86,7 @@ class _BankDeskripsiUbahState extends State<BankDeskripsiUbah> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/detail-data-financial/' + widget.role_uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -148,7 +147,7 @@ class _BankDeskripsiUbahState extends State<BankDeskripsiUbah> {
         loading = true;
       });
       var uri = Uri.parse(
-          URL_HTTP+'/api/v2/user/edit-financial/' +
+          'http://digiadministrator.falaraborneo.com/api/v2/user/edit-financial/' +
               widget.role_uuid);
       var request = http.MultipartRequest("POST", uri);
       request.fields['name'] = name;

@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
 import 'package:digipark/customdialog/CustomDialogSimpanProfil.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
@@ -58,7 +57,7 @@ class _BankGambarState extends State<BankGambar> {
       });
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/financial/slide/' + role_uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -245,7 +244,7 @@ class _BankGambarState extends State<BankGambar> {
                                                 color: Colors.grey[200],
                                                 child: CachedNetworkImage(
                                                   imageUrl:
-                                                      URL_FULL +
+                                                      "http://digiadministrator.falaraborneo.com/" +
                                                           x.path,
                                                   fit: BoxFit.cover,
                                                   //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -362,7 +361,7 @@ class _BankGambarState extends State<BankGambar> {
 
                                                     if (koneksi == 1) {
                                                       var uri = Uri.parse(
-                                                          URL_HTTP+'/api/v2/user/financial-slide/' +
+                                                          'http://digiadministrator.falaraborneo.com/api/v2/user/financial-slide/' +
                                                               role_uuid +
                                                               '/delete');
                                                       var request =

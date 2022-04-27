@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io'; 
 import 'package:date_format/date_format.dart';
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/widgets/constant.dart';
 import 'package:digipark/widgets/reviewUI.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +58,7 @@ class _ReviewsState extends State<Reviews> {
       });
       print(widget.buss_uuid);
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/business/' + widget.buss_uuid + '/review/list'),
           headers: {
             'Content-Type': 'application/json',

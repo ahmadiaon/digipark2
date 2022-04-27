@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:digipark/2menu/sidebar_profil_saya.dart';
 import 'package:digipark/customdialog/CustomDialogLogout.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -96,7 +95,7 @@ class Drawer_siderbarState extends State<Drawer_siderbar> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/profile/' + uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -169,7 +168,7 @@ class Drawer_siderbarState extends State<Drawer_siderbar> {
                                 )
                               : CachedNetworkImage(
                                   imageUrl:
-                                      URL_HTTP +
+                                      'http://digiadministrator.falaraborneo.com' +
                                           txt_avatar,
                                   progressIndicatorBuilder:
                                       (context, url, downloadProgress) =>

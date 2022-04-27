@@ -4,7 +4,6 @@ import 'package:digipark/1logindll/halaman_login.dart';
 import 'package:digipark/1logindll/halaman_otp.dart';
 import 'package:digipark/2menu/menu_utama.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/widgets/handlinginet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -83,7 +82,7 @@ class _LupaPasswordState extends State<LupaPassword> {
       });
       final response = await http.post(
           Uri.http(
-              URL, 'api/v2/user/checkEmail'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/checkEmail'),
           body: {"data": phone_number});
       final data = jsonDecode(response.body);
       if (data['meta']['message'] == "Email or Phone number doesn't match") {

@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:digipark/widgets/constant.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +60,7 @@ class ReviewUI extends StatelessWidget {
                             )
                           : CachedNetworkImage(
                               imageUrl:
-                                  URL_FULL +
+                                  "http://digiadministrator.falaraborneo.com/" +
                                       image,
                               fit: BoxFit.cover,
                               //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -144,7 +143,7 @@ class ReviewUI extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         child: CachedNetworkImage(
                           imageUrl:
-                              URL_HTTP +
+                              "http://digiadministrator.falaraborneo.com" +
                                   image_path,
                           fit: BoxFit.cover,
                           //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>

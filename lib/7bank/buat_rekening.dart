@@ -1,7 +1,6 @@
 import 'package:digipark/0lainlain/textinputdecor.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
 import 'package:digipark/customdialog/CustomDialogBuatRekening.dart';
-import 'package:digipark/env.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -186,7 +185,7 @@ class _BuatRekeningState extends State<BuatRekening> {
       print(uuid);
       print(token);
       var uri = Uri.parse(
-          URL_HTTP+'/api/v2/user/financial-service/register/' +
+          'http://digiadministrator.falaraborneo.com/api/v2/user/financial-service/register/' +
               uuid);
       var request = http.MultipartRequest("POST", uri);
       request.fields['financial_service_uuid'] = widget.finan_uuid;

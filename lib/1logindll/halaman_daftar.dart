@@ -12,8 +12,6 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
 
-import '../env.dart';
-
 class HalamanDaftar extends StatefulWidget {
   @override
   _HalamanDaftarState createState() => _HalamanDaftarState();
@@ -145,7 +143,7 @@ class _HalamanDaftarState extends State<HalamanDaftar> {
         try {
           final response = await http.post(
               Uri.http(
-                  URL, 'api/v2/user/register'),
+                  'digiadministrator.falaraborneo.com', 'api/v2/user/register'),
               body: {
                 "email": email,
                 "password": password,

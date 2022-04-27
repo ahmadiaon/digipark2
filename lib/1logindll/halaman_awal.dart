@@ -7,7 +7,6 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../env.dart';
 import 'halaman_daftar.dart';
 import 'halaman_login.dart';
 
@@ -54,7 +53,7 @@ class _HalamanAwalState extends State<HalamanAwal> {
 
     if (koneksi == 1) {
       final response = await http.get(
-          Uri.http(URL, 'api/v2/user/logout'),
+          Uri.http('digiadministrator.falaraborneo.com', 'api/v2/user/logout'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

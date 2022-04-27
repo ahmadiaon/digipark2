@@ -4,7 +4,6 @@ import 'package:async/async.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:digipark/0lainlain/textinputdecor.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +100,7 @@ class _SideBarProfilSayaState extends State<SideBarProfilSaya> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/profile/' + uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -165,7 +164,7 @@ class _SideBarProfilSayaState extends State<SideBarProfilSaya> {
       };
       if (_imageFile_avatar == null) {
         var uri = Uri.parse(
-            URL_HTTP+'/api/v2/user/profile/' +
+            'http://digiadministrator.falaraborneo.com/api/v2/user/profile/' +
                 uuid +
                 '?_method=PUT');
         var request = http.MultipartRequest("POST", uri);
@@ -196,7 +195,7 @@ class _SideBarProfilSayaState extends State<SideBarProfilSaya> {
             DelegatingStream.typed(_imageFile_avatar.openRead()));
         var length = await _imageFile_avatar.length();
         var uri = Uri.parse(
-            URL_HTTP+'/api/v2/user/profile/' +
+            'http://digiadministrator.falaraborneo.com/api/v2/user/profile/' +
                 uuid +
                 '?_method=PUT');
         var request = http.MultipartRequest("POST", uri);
@@ -313,7 +312,7 @@ class _SideBarProfilSayaState extends State<SideBarProfilSaya> {
                 )
               : CachedNetworkImage(
                   imageUrl:
-                      URL_HTTP + txt_avatar,
+                      'http://digiadministrator.falaraborneo.com' + txt_avatar,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       buildSkeletonDrawer(context),
                   // placeholder: (context, url) =>

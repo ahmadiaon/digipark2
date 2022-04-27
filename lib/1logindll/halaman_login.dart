@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:digipark/0lainlain/textinputdecor.dart';
 import 'package:digipark/2menu/menu_utama.dart';
 import 'package:digipark/customdialog/CustomDialog.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,7 +88,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
         loading = true;
       });
       final response = await http.post(
-          Uri.http(URL, 'api/v2/user/login'),
+          Uri.http('digiadministrator.falaraborneo.com', 'api/v2/user/login'),
           body: {"phone_number": phone_number, "password": password});
       final data = jsonDecode(response.body);
 
@@ -217,7 +216,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
 
     if (koneksi == 1) {
       final response = await http.get(
-          Uri.http(URL, 'api/v2/user/logout'),
+          Uri.http('digiadministrator.falaraborneo.com', 'api/v2/user/logout'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

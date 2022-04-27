@@ -4,7 +4,6 @@ import 'dart:isolate';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,7 +78,7 @@ class _BankPinjamDanaState extends State<BankPinjamDana> {
       });
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/financial-submissions/' + role_uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -309,7 +308,7 @@ class _BankPinjamDanaState extends State<BankPinjamDana> {
                                                 color: Colors.grey[200],
                                                 child: CachedNetworkImage(
                                                   imageUrl:
-                                                      URL_FULL +
+                                                      "http://digiadministrator.falaraborneo.com/" +
                                                           x.identity_card,
                                                   fit: BoxFit.cover,
                                                   //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -420,7 +419,7 @@ class _BankPinjamDanaState extends State<BankPinjamDana> {
                                                     LineIcons.fileDownload),
                                                 onPressed: () async {
                                                   download(
-                                                      URL_FULL +
+                                                      'http://digiadministrator.falaraborneo.com/' +
                                                           x.pdf);
                                                 },
                                               ), // icon-2

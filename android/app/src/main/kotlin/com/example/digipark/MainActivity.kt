@@ -1,4 +1,4 @@
-package id.go.palangkaraya.mobile.digipark
+package com.example.digipark
 
 import io.flutter.embedding.android.FlutterActivity
 

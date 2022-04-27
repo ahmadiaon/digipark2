@@ -2,7 +2,6 @@ import 'dart:isolate';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -108,7 +107,7 @@ class _DetailPinjamDanaState extends State<DetailPinjamDana> {
         child: FloatingActionButton.extended(
           // splashColor: Colors.green,
           onPressed: () async {
-            download(URL_FULL +
+            download('http://digiadministrator.falaraborneo.com/' +
                 widget.list_submission.pdf);
           },
           label: Text(
@@ -137,7 +136,7 @@ class _DetailPinjamDanaState extends State<DetailPinjamDana> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
               child: CachedNetworkImage(
-                imageUrl: URL_FULL +
+                imageUrl: "http://digiadministrator.falaraborneo.com/" +
                     widget.list_submission.identity_card,
                 //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                 // CircularProgressIndicator(value: downloadProgress.progress),

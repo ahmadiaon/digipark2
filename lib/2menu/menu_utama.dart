@@ -4,7 +4,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:digipark/0lainlain/modal.dart';  
 import 'package:digipark/2menu/drawer.dart';
 import 'package:digipark/8video/halaman_video.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:digipark/3pwk/halaman_detail_komunitas.dart';
 import 'package:digipark/3pwk/halaman_komunitas.dart';
@@ -89,8 +88,6 @@ class _MenuUtamaState extends State<MenuUtama> {
   getPref() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     setState(() {
-      print("freeeeeeeeeeeeeeeeeeeeeep : ");
-      print(URL);
       phone_number = preferences.getString("phone_number");
       token = preferences.getString("token");
       uuid = preferences.getString("uuid");
@@ -502,16 +499,16 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   final GlobalKey<RefreshIndicatorState> _refresh =
       GlobalKey<RefreshIndicatorState>();
   Future<void> tampil_data() async {
-    // print(token);
+    print(token);
     var koneksi;
     try {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        //print('connected');
+        print('connected');
         koneksi = 1;
       }
     } on SocketException catch (_) {
-      //print('not connected');
+      print('not connected');
       koneksi = 0;
     }
 
@@ -526,7 +523,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
       });
       final response = await http.get(
           Uri.http(
-              URL, 'api/v2/user/slide/list'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/slide/list'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -558,12 +555,12 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           loading = false;
         });
       }
-      //print('Token : ${token}');
+      print('Token : ${token}');
       print('UUID : ${uuid}');
-      //print('Role : ${role}');
+      print('Role : ${role}');
 
       final response2 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/community/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -602,7 +599,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           list_community.add(ab);
         });
 
-        //print(data['data']);
+        print(data['data']);
         setState(() {
           loading = false;
         });
@@ -610,7 +607,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
       final response5 = await http.get(
           Uri.http(
-              URL, 'api/v2/user/tour/list'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/tour/list'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -652,7 +649,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
       }
 
       final response3 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/financial-service/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -688,14 +685,14 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           );
           list_financial.add(ab);
         });
-        //print(data['data']);
+        print(data['data']);
         setState(() {
           loading = false;
         });
       }
 
       final response4 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/business/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -733,14 +730,14 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           );
           list_business.add(ab);
         });
-        //print(data['data']);
+        print(data['data']);
         setState(() {
           loading = false;
         });
       }
 
       final response6 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/news/list/single'),
           headers: {
             'Content-Type': 'application/json',
@@ -767,7 +764,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           );
           list_news.add(ab);
         });
-        //print(data['data']);
+        print(data['data']);
         setState(() {
           loading = false;
         });
@@ -775,7 +772,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
       final response7 = await http.get(
           Uri.http(
-              URL, 'api/v2/user/youtube/list'),
+              'digiadministrator.falaraborneo.com', 'api/v2/user/youtube/list'),
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -801,7 +798,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           );
           list_youtube.add(ab);
         });
-        //print(data['data']);
+        print(data['data']);
         setState(() {
           loading = false;
         });
@@ -853,9 +850,9 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
     // data_bank = menu_bank;
     getPref();
     tampil_data();
-    //print(phone_number);
-    //print(token);
-    //print(uuid);
+    print(phone_number);
+    print(token);
+    print(uuid);
   }
 
   // void _toggleTab() {
@@ -928,7 +925,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                   children: <Widget>[
                                                     CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL+
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.path,
                                                       fit: BoxFit.cover,
                                                       width: 1000.0,
@@ -1382,7 +1379,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                         AspectRatio(
-                          aspectRatio: 16 / 9.5,
+                          aspectRatio: 16 / 9.2,
                           child: Container(
                             color: Color(0xFFFFC600),
                             child: Container(
@@ -1433,7 +1430,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
-                                                              URL_HTTP + "/"+
+                                                              "http://digiadministrator.falaraborneo.com/" +
                                                                   x.image_path,
                                                           //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                           // CircularProgressIndicator(value: downloadProgress.progress),
@@ -1630,7 +1627,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                         AspectRatio(
-                         aspectRatio: 16 / 9.5,
+                         aspectRatio: 16 / 9.2,
                           child: Container(
                             color: Color(0xFFFFC600),
                             child: Container(
@@ -1680,7 +1677,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
-                                                              URL_HTTP + "/"+
+                                                              "http://digiadministrator.falaraborneo.com/" +
                                                                   x.image_path,
                                                           //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                           // CircularProgressIndicator(value: downloadProgress.progress),
@@ -1877,7 +1874,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                         AspectRatio(
-                          aspectRatio: 16 / 9.5,
+                          aspectRatio: 16 / 9.2,
                           child: Container(
                             color: Color(0xFFFFC600),
                             child: Container(
@@ -1933,7 +1930,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
-                                                              URL_HTTP + "/"+
+                                                              "http://digiadministrator.falaraborneo.com/" +
                                                                   x.image_path,
                                                           // progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                           // CircularProgressIndicator(value: downloadProgress.progress),
@@ -2130,7 +2127,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                         AspectRatio(
-                          aspectRatio: 16 / 8.2,
+                          aspectRatio: 16 / 8,
                           child: Container(
                             color: Color(0xFFFFC600),
                             child: Container(
@@ -2184,7 +2181,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
-                                                              URL_HTTP + "/"+
+                                                              "http://digiadministrator.falaraborneo.com/" +
                                                                   x.image_path,
                                                           //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                           // CircularProgressIndicator(value: downloadProgress.progress),
@@ -2382,7 +2379,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                         AspectRatio(
-                          aspectRatio: 16 / 8.2,
+                          aspectRatio: 16 / 8,
                           child: Container(
                             color: Color(0xFFFFC600), 
                             child: Container(
@@ -2439,7 +2436,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                                                           child:
                                                               CachedNetworkImage(
                                                             imageUrl:
-                                                                URL_HTTP + "/"+
+                                                                "http://digiadministrator.falaraborneo.com/" +
                                                                     x.path,
                                                             //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
                                                             // CircularProgressIndicator(value: downloadProgress.progress),
@@ -2656,7 +2653,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           ],
                         ),
                        AspectRatio(
-                          aspectRatio: 16 / 6.7,
+                          aspectRatio: 16 / 6.5,
                           child: Container(
                             color: Color(0xFFFFC600), 
                             child: Container(

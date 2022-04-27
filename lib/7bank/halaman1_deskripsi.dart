@@ -6,7 +6,6 @@ import 'package:line_icons/line_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-import '../env.dart';
 import '../skeleton/skeleton.dart';
 import '../widgets/handlinginet.dart';
 import 'halaman1_ubah.dart'; 
@@ -88,7 +87,7 @@ class _BankDeskripsiState extends State<BankDeskripsi> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/detail-data-financial/' + role_uuid),
           headers: {
             'Content-Type': 'application/json',

@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/custom_dialog.dart';
 import 'package:digipark/0lainlain/modal.dart';
 import 'package:digipark/0lainlain/textinputdecor.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:digipark/widgets/constant.dart';
 import 'package:digipark/widgets/reviewUI.dart';
@@ -131,7 +130,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
       });
       print(widget.list_business.uuid);
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/detail-business/' + widget.list_business.uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -161,7 +160,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
 
       final response2 = await http.get(
           Uri.http(
-              URL,
+              'digiadministrator.falaraborneo.com',
               'api/v2/user/business/' +
                   widget.list_business.uuid +
                   '/review/listLimit'),
@@ -248,7 +247,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
       print(token);
       if (_imageFile_path == null) {
         var uri = Uri.parse(
-            URL_HTTP+'/api/v2/user/business/' +
+            'http://digiadministrator.falaraborneo.com/api/v2/user/business/' +
                 widget.list_business.uuid +
                 '/review');
         var request = http.MultipartRequest("POST", uri);
@@ -270,7 +269,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
             http.ByteStream(DelegatingStream.typed(_imageFile_path.openRead()));
         var length = await _imageFile_path.length();
         var uri = Uri.parse(
-            URL_HTTP+'/api/v2/user/business/' +
+            'http://digiadministrator.falaraborneo.com/api/v2/user/business/' +
                 widget.list_business.uuid +
                 '/review');
         var request = http.MultipartRequest("POST", uri);
@@ -406,7 +405,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
                                   children: <Widget>[
                                     CachedNetworkImage(
                                       imageUrl:
-                                          URL_FULL +
+                                          "http://digiadministrator.falaraborneo.com/" +
                                               image_path[index],
                                       fit: BoxFit.cover,
                                       placeholder: (context, url) =>
@@ -1263,7 +1262,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
                                                                 CachedNetworkImage(
                                                               height: 120,
                                                               width: 120,
-                                                              imageUrl: URL_FULL +
+                                                              imageUrl: "http://digiadministrator.falaraborneo.com/" +
                                                                   widget
                                                                       .list_business
                                                                       .image_path,

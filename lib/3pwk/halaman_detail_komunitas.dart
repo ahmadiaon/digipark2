@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart'; 
 import 'package:digipark/0lainlain/modal.dart';  
 import 'package:digipark/3pwk/mendaftar_komunitas.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart'; 
 import 'package:flutter_carousel_slider/carousel_slider.dart';
@@ -89,7 +88,7 @@ class _DetailKomunitasState extends State<DetailKomunitas> {
         loading = true;
       });
       final response = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/detail-community/' + widget.list_community.uuid),
           headers: {
             'Content-Type': 'application/json',
@@ -209,7 +208,7 @@ class _DetailKomunitasState extends State<DetailKomunitas> {
                                   children: <Widget>[
                                     CachedNetworkImage(
                                       imageUrl:
-                                          URL_FULL +
+                                          "http://digiadministrator.falaraborneo.com/" +
                                               image_path[index],
                                       fit: BoxFit.cover,
                                       placeholder: (context, url) =>

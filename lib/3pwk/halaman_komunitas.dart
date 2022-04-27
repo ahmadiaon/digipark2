@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digipark/0lainlain/modal.dart';
-import 'package:digipark/env.dart';
 import 'package:digipark/skeleton/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,7 +68,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
 
       //Sport
       final response5 = await http.get(
-          Uri.http(URL,
+          Uri.http('digiadministrator.falaraborneo.com',
               'api/v2/user/community/list'),
           headers: {
             'Content-Type': 'application/json',
@@ -130,7 +129,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
 
       // //Social Culture
       // final response2 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/community/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -180,7 +179,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
 
       // //Entrepreneur
       // final response3 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/community/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -230,7 +229,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
 
       // //Art & Digital
       // final response4 = await http.get(
-      //     Uri.http(URL,
+      //     Uri.http('digiadministrator.falaraborneo.com',
       //         'api/v2/user/community/list'),
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -461,7 +460,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -664,7 +663,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -867,7 +866,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -1070,7 +1069,7 @@ class _HalamanKomunitasState extends State<HalamanKomunitas> {
                                                             10),
                                                     child: CachedNetworkImage(
                                                       imageUrl:
-                                                          URL_FULL +
+                                                          "http://digiadministrator.falaraborneo.com/" +
                                                               x.path,
                                                       fit: BoxFit.cover,
                                                       //                                                  progressIndicatorBuilder: (context, url, downloadProgress) =>
